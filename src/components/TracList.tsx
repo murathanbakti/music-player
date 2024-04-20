@@ -1,13 +1,22 @@
-import libary from '@/assets/data/libary.json'
-import { FlatList, FlatListProps } from 'react-native'
+import { ultilStyles } from '@/styles'
+import { FlatList, FlatListProps, View } from 'react-native'
 import { TrackListItem } from './TrackListItem'
 
-export type TrackListProps = Partial<FlatListProps<unknown>>
+export type TrackListProps = Partial<FlatListProps<unknown>> & {
+	tracks: any[]
+}
 
-export const TrackList = ({ ...flatlistProps }: TrackListProps) => {
+const ItemDvider = () => {
+	return <View style={{ ...ultilStyles.itemSeparator, marginVertical: 9, marginLeft: 60 }} />
+}
+
+export const TrackList = ({ tracks, ...flatlistProps }: TrackListProps) => {
 	return (
 		<FlatList
-			data={libary}
+			data={tracks}
+			contentContainerStyle={{ paddingTop: 10, paddingBottom: 128 }}
+			ListFooterComponent={ItemDvider}
+			ItemSeparatorComponent={ItemDvider}
 			renderItem={({ item: track }) => (
 				<TrackListItem
 					track={{

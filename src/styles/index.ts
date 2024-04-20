@@ -12,4 +12,10 @@ export const defaultStyles = StyleSheet.create({
 	},
 })
 
-export const ultilStyles = StyleSheet.create({})
+export const ultilStyles = StyleSheet.create({
+	itemSeparator: {
+		borderColor: colors.textMuted,
+		borderWidth: StyleSheet.hairlineWidth,
+		opacity: 0.3,
+	},
+})
