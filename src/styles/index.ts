@@ -18,4 +18,17 @@ export const ultilStyles = StyleSheet.create({
 		borderWidth: StyleSheet.hairlineWidth,
 		opacity: 0.3,
 	},
+	emptyContentText: {
+		...defaultStyles.text,
+		color: colors.text,
+		textAlign: 'center',
+		marginTop: 20,
+	},
+	emptyContentImage: {
+		width: 200,
+		height: 200,
+		alignSelf: 'center',
+		marginTop: 40,
+		opacity: 0.3,
+	},
 })

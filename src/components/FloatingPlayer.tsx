@@ -1,16 +1,16 @@
 import { PlayPauseButton, SkipToNextButton } from '@/components/PlayerControls'
 import { unknownTrackImageUri } from '@/constants/images'
+import { useLastActiveTrack } from '@/hooks/useLastActiveTrack'
 import { defaultStyles } from '@/styles'
 import { StyleSheet, Text, TouchableOpacity, View, ViewProps } from 'react-native'
 import FastImage from 'react-native-fast-image'
-import { Track, useActiveTrack } from 'react-native-track-player'
+import { useActiveTrack } from 'react-native-track-player'
 
 export const FloatingPlayer = ({ style }: ViewProps) => {
 	const activeTrack = useActiveTrack()
+	const lastActiveTrack = useLastActiveTrack()
 
-	const displayedTrack: Track = activeTrack ?? {
-		title: 'this is just a song',
-	}
+	const displayedTrack = activeTrack ?? lastActiveTrack
 	if (!displayedTrack) return null
 
 	return (
