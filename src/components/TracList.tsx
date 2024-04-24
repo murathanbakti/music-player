@@ -1,5 +1,5 @@
 import { unknownTrackImageUri } from '@/constants/images'
-import { ultilStyles } from '@/styles'
+import { utilsStyles } from '@/styles'
 import { FlatList, FlatListProps, Text, View } from 'react-native'
 import FastImage from 'react-native-fast-image'
 import TrackPlayer, { Track } from 'react-native-track-player'
@@ -10,7 +10,7 @@ export type TrackListProps = Partial<FlatListProps<Track>> & {
 }
 
 const ItemDvider = () => {
-	return <View style={{ ...ultilStyles.itemSeparator, marginVertical: 9, marginLeft: 60 }} />
+	return <View style={{ ...utilsStyles.itemSeparator, marginVertical: 9, marginLeft: 60 }} />
 }
 
 export const TrackList = ({ tracks, ...flatlistProps }: TrackListProps) => {
@@ -27,11 +27,11 @@ export const TrackList = ({ tracks, ...flatlistProps }: TrackListProps) => {
 			ItemSeparatorComponent={ItemDvider}
 			ListEmptyComponent={
 				<View>
-					<Text style={ultilStyles.emptyContentText}>No Songs Found</Text>
+					<Text style={utilsStyles.emptyContentText}>No Songs Found</Text>
 
 					<FastImage
 						source={{ uri: unknownTrackImageUri, priority: FastImage.priority.normal }}
-						style={ultilStyles.emptyContentImage}
+						style={utilsStyles.emptyContentImage}
 					/>
 				</View>
 			}
