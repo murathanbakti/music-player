@@ -1,8 +1,8 @@
-import libary from '@/assets/data/libary.json'
 import { TrackList } from '@/components/TracList'
 import { screenPadding } from '@/constants/tokens'
 import { trackTitleFilter } from '@/helpers/filter'
 import { useNavigationSearch } from '@/hooks/useNavigationSearch'
+import { useTracks } from '@/store/libary'
 import { defaultStyles } from '@/styles'
 import { useMemo } from 'react'
 import { ScrollView, View } from 'react-native'
@@ -14,10 +14,12 @@ const SongsScreen = () => {
 		},
 	})
 
-	const filteredTracks = useMemo(() => {
-		if (!search) return libary
+	const tracks = useTracks()
 
-		return libary.filter(trackTitleFilter(search))
+	const filteredTracks = useMemo(() => {
+		if (!search) return tracks
+
+		return tracks.filter(trackTitleFilter(search))
 	}, [search])
 	return (
 		<View style={defaultStyles.container}>

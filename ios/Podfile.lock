@@ -81,7 +81,7 @@ PODS:
     - ExpoModulesCore
   - ExpoFileSystem (16.0.9):
     - ExpoModulesCore
-  - ExpoHead (3.4.8):
+  - ExpoHead (3.4.10):
     - ExpoModulesCore
   - ExpoKeepAwake (12.8.2):
     - ExpoModulesCore
@@ -94,7 +94,7 @@ PODS:
     - React-NativeModulesApple
     - React-RCTAppDelegate
     - ReactCommon/turbomodule/core
-  - EXSplashScreen (0.26.4):
+  - EXSplashScreen (0.26.5):
     - ExpoModulesCore
     - glog
     - RCT-Folly (= 2022.05.16.00)
@@ -1456,11 +1456,11 @@ SPEC CHECKSUMS:
   expo-dev-menu-interface: 7ba029c9d1a82ac22b9b584c00514860b060553e
   ExpoBlur: e832d874bd94afc0645daddbd3162ec1ce172080
   ExpoFileSystem: 74cc0fae916f9f044248433971dcfc8c3befd057
-  ExpoHead: 8224345e80abcf4c97b31c99805dd5a3c8d3404d
+  ExpoHead: 89ffd324e60520751c2c285233fe45e875c91874
   ExpoKeepAwake: 0f5cad99603a3268e50af9a6eb8b76d0d9ac956c
   ExpoLinearGradient: 4ad1449a2408e0435ac959076562b3921f2e32a1
   ExpoModulesCore: 4a8928a228569301ac4fc4a1e846713e05754d05
-  EXSplashScreen: 5538a51beec451bf1fcf5198e3062790e2534df3
+  EXSplashScreen: fb4d80520d2348d57879e7a272415438bbcdffd3
   EXUpdatesInterface: 3e444e2093e25b7ca0999a7d8c16e8392dee70c3
   FBLazyVector: f64d1e2ea739b4d8f7e4740cde18089cd97fe864
   FBReactNativeSpec: 9f2b8b243131565335437dba74923a8d3015e780
