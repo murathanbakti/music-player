@@ -5,18 +5,25 @@ import { useRef } from 'react'
 import { FlatList, FlatListProps, Text, View } from 'react-native'
 import FastImage from 'react-native-fast-image'
 import TrackPlayer, { Track } from 'react-native-track-player'
+import { QueueControls } from './QueueControls'
 import { TrackListItem } from './TrackListItem'
 
 export type TrackListProps = Partial<FlatListProps<Track>> & {
 	id: string
 	tracks: any[]
+	hideQueueControls?: boolean
 }
 
 const ItemDvider = () => {
 	return <View style={{ ...utilsStyles.itemSeparator, marginVertical: 9, marginLeft: 60 }} />
 }
 
-export const TrackList = ({ id, tracks, ...flatlistProps }: TrackListProps) => {
+export const TrackList = ({
+	id,
+	tracks,
+	hideQueueControls = false,
+	...flatlistProps
+}: TrackListProps) => {
 	const queueOffSet = useRef(0)
 	const { activeQueueID, setActiveQueueID } = useQueue()
 
@@ -33,7 +40,7 @@ export const TrackList = ({ id, tracks, ...flatlistProps }: TrackListProps) => {
 
 			await TrackPlayer.reset()
 
-			// we Construct the new queue
+			// we Construct the ne w queue
 			await TrackPlayer.add(selectedTrack)
 			await TrackPlayer.add(afterTracks)
 			await TrackPlayer.add(beforeTracks)
@@ -57,6 +64,11 @@ export const TrackList = ({ id, tracks, ...flatlistProps }: TrackListProps) => {
 		<FlatList
 			data={tracks}
 			contentContainerStyle={{ paddingTop: 10, paddingBottom: 128 }}
+			ListHeaderComponent={
+				!hideQueueControls ? (
+					<QueueControls tracks={tracks} style={{ paddingBottom: 20 }} />
+				) : undefined
+			}
 			ListFooterComponent={ItemDvider}
 			ItemSeparatorComponent={ItemDvider}
 			ListEmptyComponent={
