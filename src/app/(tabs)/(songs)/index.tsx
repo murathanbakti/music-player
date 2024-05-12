@@ -3,7 +3,7 @@ import { screenPadding } from '@/constants/tokens'
 import { trackTitleFilter } from '@/helpers/filter'
 import { generateTrackListId } from '@/helpers/miscellaneous'
 import { useNavigationSearch } from '@/hooks/useNavigationSearch'
-import { useTracks } from '@/store/libary'
+import { useTracks } from '@/store/library'
 import { defaultStyles } from '@/styles'
 import { useMemo } from 'react'
 import { ScrollView, View } from 'react-native'
@@ -32,6 +32,7 @@ const SongsScreen = () => {
 					id={generateTrackListId('songs', search)}
 					tracks={filteredTracks}
 					scrollEnabled={false}
+					hideQueueControls={true}
 				/>
 			</ScrollView>
 		</View>
