@@ -21,7 +21,7 @@ const SongsScreen = () => {
 		if (!search) return tracks
 
 		return tracks.filter(trackTitleFilter(search))
-	}, [search])
+	}, [search, tracks])
 	return (
 		<View style={defaultStyles.container}>
 			<ScrollView
